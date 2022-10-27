@@ -22,7 +22,7 @@ jobs:
         echo validator
 
   terraform-plan:
-    needs: terraform-validator
+    #needs: terraform-validator
     name: poc-template
     runs-on: poc-runner
 
