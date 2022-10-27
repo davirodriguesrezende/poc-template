@@ -1,4 +1,4 @@
-name: 'Terraform Validator and Plan and Apply'
+name: 'Terraform Validator and Plan'
 
 on:
   workflow_call:
@@ -9,42 +9,15 @@ on:
 
 jobs:
   terraform-validator:
-    name: Template Terraform Step Validator
+    name: Terraform Step Validator and Plan
     runs-on: poc-runner
 
     steps:
-    #- name: checkout code
-    #  uses: actions/checkout@v2
-
     - name: terraform validator
       run: |
-        pwd
-        ls -lah
         echo ${{inputs.OIOI}}
         echo validator
 
     - name: terraform plan
       run: |
         echo plan
-
-  terraform-plan:
-    runs-on: poc-runner
-    steps:
-    - name: Template Terraform Step Validator
-      run: |
-        pwd
-        ls -lah
-        echo "TESTE"
-
-#
-#  terraform-apply:
-#    name: poc-template
-#    runs-on: poc-runner
-#
-#    steps:
-#    - name: checkout code
-#      uses: actions/checkout@v2
-#
-#    - name: terraform apply
-#      run: |
-#        echo apply

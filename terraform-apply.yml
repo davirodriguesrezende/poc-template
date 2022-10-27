@@ -1,0 +1,19 @@
+name: 'Terraform Apply'
+
+on:
+  workflow_call:
+    inputs:
+      OIOI:
+        required: true
+        type: string
+
+jobs:
+  terraform-apply:
+    name: Terraform Step Apply
+    runs-on: poc-runner
+
+    steps:
+    - name: Terraform Apply
+      run: |
+        echo ${{inputs.OIOI}}
+        echo apply
