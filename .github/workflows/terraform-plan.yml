@@ -1,11 +1,11 @@
-name: 'Terraform Validator/Plan/Apply'
+name: 'Terraform Validator and Plan and Apply'
 
-#on:
-#  workflow_call:
-#    inputs:
-#      OIOI:
-#        required: true
-#        type: string
+on:
+  workflow_call:
+    inputs:
+      OIOI:
+        required: true
+        type: string
 
 jobs:
   terraform-validator:
