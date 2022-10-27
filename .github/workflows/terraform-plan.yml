@@ -3,7 +3,7 @@ name: 'Terraform Validator/Plan/Apply'
 on:
   workflow_call:
     inputs:
-      TEST:
+      OIOI:
         required: true
         type: string
 
@@ -18,7 +18,7 @@ jobs:
 
     - name: terraform validator
       run: |
-        echo ${{inputs.TEST}}
+        echo ${{inputs.OIOI}}
         echo validator
 
 #  terraform-plan:
