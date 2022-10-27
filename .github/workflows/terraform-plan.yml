@@ -18,6 +18,8 @@ jobs:
 
     - name: terraform validator
       run: |
+        pwd
+        ls -lah
         echo ${{inputs.OIOI}}
         echo validator
 
