@@ -21,6 +21,14 @@ jobs:
         echo ${inputs.TEST}
         terraform validator
 
+  terraform-plan:
+    name: poc-template
+    runs-on: poc-runner
+
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+
     - name: terraform plan
       run: |
         terraform plan
