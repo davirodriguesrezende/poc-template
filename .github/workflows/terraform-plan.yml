@@ -21,18 +21,10 @@ jobs:
         echo ${{inputs.OIOI}}
         echo validator
 
-  terraform-plan:
-    #needs: terraform-validator
-    name: poc-template
-    runs-on: poc-runner
-
-    steps:
-    - name: checkout code
-      uses: actions/checkout@v2
-
     - name: terraform plan
       run: |
-        echo plan
+        echo plan    
+
 #
 #  terraform-apply:
 #    name: poc-template
