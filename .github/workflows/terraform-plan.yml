@@ -1,0 +1,25 @@
+name: 'Pipeline Validator and Plan'
+
+on:
+  workflow_call:
+    inputs:
+      TEST:
+        required: FALSE
+        type: string
+
+jobs:
+  terraform-validator:
+    name: poc-templates 
+    runs-on: poc-runner
+
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+
+    - name: terraform validator
+      run: |
+        terraform validator
+
+    - name: terraform plan
+      run: |
+        terraform plan
