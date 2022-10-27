@@ -32,6 +32,8 @@ jobs:
     steps:
     - name: Template Terraform Step Validator
       run: |
+        pwd
+        ls -lah
         echo "TESTE"
 
 #
