@@ -19,7 +19,7 @@ jobs:
     - name: terraform validator
       run: |
         echo ${inputs.TEST}
-        terraform validator
+        echo validator
 
   terraform-plan:
     name: poc-template
@@ -31,4 +31,4 @@ jobs:
 
     - name: terraform plan
       run: |
-        terraform plan
+        echo plan
