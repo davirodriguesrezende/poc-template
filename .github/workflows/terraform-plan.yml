@@ -25,7 +25,14 @@ jobs:
 
     - name: terraform plan
       run: |
-        echo plan    
+        echo plan
+
+  terraform-plan:
+    runs-on: poc-runner
+    steps:
+    - name: Template Terraform Step Validator
+      run: |
+        echo "TESTE"
 
 #
 #  terraform-apply:
