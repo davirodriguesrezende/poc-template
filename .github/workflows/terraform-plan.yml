@@ -9,7 +9,7 @@ on:
 
 jobs:
   terraform-validator:
-    name: poc-templates 
+    name: poc-template
     runs-on: poc-runner
 
     steps:
