@@ -17,3 +17,4 @@ jobs:
       run: |
         echo ${{inputs.OIOI}}
         echo apply
+        terraform version
