@@ -19,7 +19,8 @@ jobs:
 
     - name: Set environment variables
       run: |
-        if [ ${{ inputs.environment }} == "main" ] then ${{ inputs.environment }} == "prd"; fi
+        echo  ${{ inputs.environment }}
+        if [ ${{ inputs.environment }} == "main" ] then export ${{ inputs.environment }} == "prd"; fi
         echo  ${{ inputs.environment }}
    
     - name: terraform validate
