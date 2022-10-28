@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: terraform validate
       run: |
-        terraform init -backend-config=backend-${GITHUB_REF##*/}.tfvars
+        terraform init -backend-config=backend-${{inputs.environment}}.tfvars
         terraform validate
 
     - name: terraform plan
