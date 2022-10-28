@@ -15,8 +15,9 @@ jobs:
     steps:
     - name: terraform validator
       run: |
-        terraform version
+        terraform init
+        terraform validator
 
     - name: terraform plan
       run: |
-        echo plan
+        terraform plan
