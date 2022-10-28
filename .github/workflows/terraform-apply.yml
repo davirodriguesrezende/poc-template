@@ -19,5 +19,5 @@ jobs:
 
     - name: Terraform Apply
       run: |
-        terraform init -backend-config=backend-${GITHUB_REF##*/}.tfvars
+        terraform init -backend-config=backend-${{ inputs.environment }}.tfvars
         terraform apply

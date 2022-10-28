@@ -17,17 +17,9 @@ jobs:
     - name: checkout code
       uses: actions/checkout@v3
 
-    - name: Set environment variables
-      run: |
-        export env_terraform=${{inputs.environment}}
-        if [ $env_terraform = main ]; then export env_terraform=prd; fi
-        echo $env_terraform
-   
     - name: terraform validate
       run: |
-        echo $env_terraform
-        echo ${{inputs.environment}}
-        terraform init -backend-config=backend-'$env_terraform'.tfvars
+        terraform init -backend-config="backend-${{ inputs.environment }}.tfvars"
         terraform validate
 
     - name: terraform plan
