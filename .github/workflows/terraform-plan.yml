@@ -17,6 +17,7 @@ jobs:
       run: |
         echo ${{inputs.OIOI}}
         echo validator
+        bash
         whoami
         terraform version
 
