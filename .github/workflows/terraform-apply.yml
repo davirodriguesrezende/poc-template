@@ -13,6 +13,10 @@ jobs:
     runs-on: poc-runner
 
     steps:
+
+    - name: check out code
+      uses: actions/checkout@v2
+      
     - name: Terraform Apply
       run: |
         terraform init -backend-config=backend-${GITHUB_REF##*/}.tfvars

@@ -13,8 +13,8 @@ jobs:
     runs-on: poc-runner
 
     steps:
-    
-    - name: check out code
+
+    - name: checkout code
       uses: actions/checkout@v2
 
     - name: terraform validate
