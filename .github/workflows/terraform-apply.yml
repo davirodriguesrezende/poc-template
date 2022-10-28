@@ -15,5 +15,5 @@ jobs:
     steps:
     - name: Terraform Apply
       run: |
-        echo ${{inputs.OIOI}}
-        echo apply
+        terraform init
+        terraform apply
