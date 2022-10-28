@@ -19,14 +19,15 @@ jobs:
 
     - name: Set environment variables
       run: |
-        if [ ${{inputs.environment}} = main ]; then export ENV=prd; fi
-        echo $ENV
+        export env_terraform=${{inputs.environment}}
+        if [ $env_terraform = main ]; then export env_terraform=prd; fi
+        echo $ENenv_terraformV
    
     - name: terraform validate
       run: |
-        ls -lah
+        echo $env_terraform
         echo ${{inputs.environment}}
-        terraform init -backend-config=backend-$ENV.tfvars
+        terraform init -backend-config=backend-$env_terraform.tfvars
         terraform validate
 
     - name: terraform plan
