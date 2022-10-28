@@ -3,7 +3,7 @@ name: 'Terraform Validate and Plan'
 on:
   workflow_call:
     inputs:
-      OIOI:
+      environment:
         required: true
         type: string
 
@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: terraform validate
       run: |
-        terraform init
+        terraform init -backend-config=backend-${GITHUB_REF##*/}.tfvars
         terraform validate
 
     - name: terraform plan
