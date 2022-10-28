@@ -21,13 +21,13 @@ jobs:
       run: |
         export env_terraform=${{inputs.environment}}
         if [ $env_terraform = main ]; then export env_terraform=prd; fi
-        echo $ENenv_terraformV
+        echo $env_terraform
    
     - name: terraform validate
       run: |
         echo $env_terraform
         echo ${{inputs.environment}}
-        terraform init -backend-config=backend-$env_terraform.tfvars
+        terraform init -backend-config=backend-'$env_terraform'.tfvars
         terraform validate
 
     - name: terraform plan
