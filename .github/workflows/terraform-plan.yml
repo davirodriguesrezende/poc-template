@@ -15,11 +15,6 @@ jobs:
     steps:
     - name: terraform validator
       run: |
-        echo ${{inputs.OIOI}}
-        echo validator
-        ls -lah /usr/bin/terraform
-        ls -lah /usr/local/bin
-        whoami
         terraform version
 
     - name: terraform plan
