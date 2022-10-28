@@ -8,20 +8,25 @@ on:
         type: string
 
 jobs:
-  terraform-validator:
+  terraform-validate:
     name: Terraform Step Validate and Plan
     runs-on: poc-runner
 
     steps:
 
     - name: checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
+    - name: Set environment variables
+      run: |
+        if [ ${{ inputs.environment }} == "main" ] then ${{ inputs.environment }} == "prd"; fi
+        echo  ${{ inputs.environment }}
+   
     - name: terraform validate
       run: |
         ls -lah
         echo ${{inputs.environment}}
-        terraform init -backend-config="backend-${{inputs.environment}}.tfvars"
+        terraform init -backend-config="backend-${{ inputs.environment }}.tfvars"
         terraform validate
 
     - name: terraform plan
