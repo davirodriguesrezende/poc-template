@@ -19,7 +19,7 @@ jobs:
 
     - name: Set environment variables
       run: |
-        export ${{ inputs.environment }}=$ENV
+        export ${{inputs.environment}}=$ENV
         if [ $ENV = main ]; then export $ENV=prd; fi
         echo $ENV
    
