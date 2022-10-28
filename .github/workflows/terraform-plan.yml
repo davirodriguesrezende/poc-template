@@ -1,4 +1,4 @@
-name: 'Terraform Validator and Plan'
+name: 'Terraform Validate and Plan'
 
 on:
   workflow_call:
@@ -9,14 +9,14 @@ on:
 
 jobs:
   terraform-validator:
-    name: Terraform Step Validator and Plan
+    name: Terraform Step Validate and Plan
     runs-on: poc-runner
 
     steps:
-    - name: terraform validator
+    - name: terraform validate
       run: |
         terraform init
-        terraform validator
+        terraform validate
 
     - name: terraform plan
       run: |
