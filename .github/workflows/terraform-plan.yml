@@ -15,6 +15,7 @@ jobs:
     steps:
     - name: terraform validate
       run: |
+        echo ${{inputs.environment}}
         terraform init -backend-config=backend-${{inputs.environment}}.tfvars
         terraform validate
 
