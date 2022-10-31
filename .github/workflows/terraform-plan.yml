@@ -19,8 +19,6 @@ jobs:
 
     - name: terraform validate
       run: |
-        ls -lah
-        pwd
         terraform init -backend-config="./configs/backends/backend-${{ inputs.environment }}.tfvars"
         terraform validate
 
