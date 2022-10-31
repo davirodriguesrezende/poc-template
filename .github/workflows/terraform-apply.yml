@@ -15,9 +15,8 @@ jobs:
     steps:
     - name: checkout code
       uses: actions/checkout@v3
-    - run: echo "::set-env name=BRANCH_NAME::${{ github.head_ref }}"
 
     - name: Terraform Apply
       run: |
         terraform init -backend-config="./configs/backends/backend-${{ inputs.environment }}.tfvars"
-        terraform apply -var="branch_name=$BRANCH_NAME" -auto-approve
+        terraform apply -var="branch_name=${{ inputs.environment }}" -auto-approve
