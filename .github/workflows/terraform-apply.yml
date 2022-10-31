@@ -19,5 +19,5 @@ jobs:
 
     - name: Terraform Apply
       run: |
-        terraform init -backend-config=/config/backends/backend-${{ inputs.environment }}.tfvars
+        terraform init -backend-config="./config/backends/backend-${{ inputs.environment }}.tfvars"
         terraform apply -auto-approve
