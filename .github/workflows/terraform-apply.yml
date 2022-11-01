@@ -13,7 +13,7 @@ jobs:
     runs-on: poc-runner
 
     steps:
-    - name: checkout code
+    - name: check out code
       uses: actions/checkout@v3
 
     - name: Terraform Apply
