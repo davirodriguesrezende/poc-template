@@ -23,7 +23,8 @@ jobs:
       uses: actions/checkout@v3
     - name: AWS credentials
       run : |
-        aws configure aws_access_key_id=${{ inputs.id_aws }} ${{ inputs.key_aws }}
+        aws configure set aws_access_key_id ${{ inputs.id_aws }} 
+        aws configure set aws_secret_access_key ${{ inputs.key_aws }}
 
     - name: terraform validate
       run: |
