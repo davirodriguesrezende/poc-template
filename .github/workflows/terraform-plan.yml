@@ -3,16 +3,15 @@ name: 'Terraform Validate and Plan'
 on:
   workflow_call:
     inputs:
-      id_aws:
-        required: true
-        type: string
-      key_aws:
-        required: true
-        type: string  
       environment:
         required: true
         type: string
-
+    secrets:
+        id_aws:
+          required: true
+        key_aws:
+          required: true
+          
 jobs:
   terraform-validate:
     name: Terraform Step Validate and Plan
