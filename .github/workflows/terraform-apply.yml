@@ -24,8 +24,8 @@ jobs:
 
     - name: AWS credentials
       run : |
-        aws configure set aws_access_key_id ${{ inputs.id_aws }} 
-        aws configure set aws_secret_access_key ${{ inputs.key_aws }}
+        aws configure set aws_access_key_id ${{ secrets.id_aws }} 
+        aws configure set aws_secret_access_key ${{ secrets.key_aws }}
 
     - name: Terraform Apply
       run: |

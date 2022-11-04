@@ -11,7 +11,7 @@ on:
           required: true
         key_aws:
           required: true
-          
+
 jobs:
   terraform-validate:
     name: Terraform Step Validate and Plan
@@ -22,8 +22,8 @@ jobs:
       uses: actions/checkout@v3
     - name: AWS credentials
       run : |
-        aws configure set aws_access_key_id ${{ inputs.id_aws }} 
-        aws configure set aws_secret_access_key ${{ inputs.key_aws }}
+        aws configure set aws_access_key_id ${{ secrets.id_aws }} 
+        aws configure set aws_secret_access_key ${{ secrets.key_aws }}
 
     - name: terraform validate
       run: |
