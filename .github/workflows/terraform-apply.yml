@@ -6,6 +6,11 @@ on:
       environment:
         required: true
         type: string
+    secrets:
+      id_aws:
+        required: true
+      key_aws:
+        required: true
 
 jobs:
   terraform-apply:
@@ -16,10 +21,10 @@ jobs:
     - name: check out code
       uses: actions/checkout@v3
 
-#    - name: AWS credentials
-#      run : |
-#        aws configure set aws_access_key_id ${{ secrets.id_aws }} 
-#        aws configure set aws_secret_access_key ${{ secrets.key_aws }}
+    - name: AWS credentials
+      run : |
+        aws configure set aws_access_key_id ${{ secrets.id_aws }} 
+        aws configure set aws_secret_access_key ${{ secrets.key_aws }}
 
     - name: Terraform Apply
       run: |
