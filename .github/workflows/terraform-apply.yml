@@ -3,12 +3,6 @@ name: 'Terraform Apply'
 on:
   workflow_call:
     inputs:
-      id_aws:
-        required: true
-        type: string
-      key_aws:
-        required: true
-        type: string  
       environment:
         required: true
         type: string
@@ -22,10 +16,10 @@ jobs:
     - name: check out code
       uses: actions/checkout@v3
 
-    - name: AWS credentials
-      run : |
-        aws configure set aws_access_key_id ${{ secrets.id_aws }} 
-        aws configure set aws_secret_access_key ${{ secrets.key_aws }}
+#    - name: AWS credentials
+#      run : |
+#        aws configure set aws_access_key_id ${{ secrets.id_aws }} 
+#        aws configure set aws_secret_access_key ${{ secrets.key_aws }}
 
     - name: Terraform Apply
       run: |
